@@ -1,0 +1,17 @@
+<div class="p-2 bg-green-300">
+  <h1>Report1 (from {{this.lower}} to {{this.upper}})</h1>
+
+  <p>
+    {{#if this.loadData.isRunning}}
+      loading...
+    {{else}}
+      The data is [{{this.data}}]
+      <button
+        {{on "click" (perform this.loadData)}}
+        class="p-1 m-px bg-red-400"
+      >
+        reload
+      </button>
+    {{/if}}
+  </p>
+</div>

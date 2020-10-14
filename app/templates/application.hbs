@@ -1,5 +1,25 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
 
+<ToggleContent @title="`async` vs `@task`" @subtitle="`@task` should always be preferred">
+  <AsyncVsTasks />
+</ToggleContent>
+
+<ToggleContent @title="Backtracking 1" @subtitle="Don't mutate external state in component lifecycle hooks">
+  <Backtracking1 />
+</ToggleContent>
+
+<ToggleContent @title="Backtracking 2" @subtitle="Don't invoke actions in component lifecycle hooks">
+  <Backtracking2 />
+</ToggleContent>
+
+<ToggleContent @title="Backtracking 3" @subtitle="Don't mutate state in a getter / computed property">
+  <Backtracking3 />
+</ToggleContent>
+
+<ToggleContent @title="Component Lifecycle">
+  <ComponentLifecycle />
+</ToggleContent>
+
+<ToggleContent @title="Inheritance vs Composition" @subtitle="We should always use composition">
+  <InheritanceVsComposition />
+</ToggleContent>
 {{outlet}}

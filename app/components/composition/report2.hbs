@@ -1,0 +1,19 @@
+<Composition::DataLoader @lower={{5000}} @upper={{6000}} as |dataLoader|>
+  <div class="p-2 bg-yellow-300">
+    <h1>Report2 (from {{dataLoader.lower}} to {{dataLoader.upper}})</h1>
+
+    <p>
+      {{#if dataLoader.isLoading}}
+        loading...
+      {{else}}
+        The data is [{{dataLoader.data}}]
+        <button
+          {{on "click" (perform dataLoader.reload)}}
+          class="p-1 m-px bg-red-400"
+        >
+          reload
+        </button>
+      {{/if}}
+    </p>
+  </div>
+</Composition::DataLoader>

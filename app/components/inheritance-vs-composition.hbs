@@ -1,0 +1,38 @@
+<div class="flex p-2">
+  <div class="flex-1 p-2">
+    <h1 class="text-2xl font-bold">Inheritance:</h1>
+
+    <Inheritance::Report1 />
+    <Inheritance::Report2 />
+  </div>
+  <div class="flex-1 p-2">
+    <h1 class="text-2xl font-bold">Composition:</h1>
+
+    <Composition::Report1 />
+    <Composition::Report2 />
+  </div>
+</div>
+
+<div>
+  <h2 class="text-2xl">Reasons why composition is better:</h2>
+
+  <Info>
+    There is much less coupling between the `DataProvider` component and the `Report` components. With inheritance, every detail of the component internals is available in the derived class. If the base class is a classic Ember component, the derived class must be too. Refactoring it to be a Glimmer component is tricky as any derived components must be migrated at the same time. In comparison, the components aren't coupled to the same degree with composition. We have specified the `DataLoader` interface in its template, this is all consuming components need to know about this component. With composition, the `DataLoader` could be a classic component or a Glimmer component, consumers don't need to know.
+  </Info>
+
+  <Info>
+    Composition works with template only components, inheritance mandates a derived JavaScript class.
+  </Info>
+
+  <Info>
+    Due to the strong coupling, it's not possible to understand a derived component without also looking at its base classes. When making changes to the derived class, one must take care so not to inadvertently override base properties or actions. With composition, components are isolated from each other so this isn't a concern.
+  </Info>
+
+  <Info>
+    The coupling that comes with inheritance also means that duplicate tests are necessary to ensure that no unintended overriding of base behaviour has occurred. In contrast, the clean separation of composition means that tests can focus on testing just the higher level behaviour of a component, it's safer to assume that the sub components are behaving well (assuming that they too are separately tested themselves).
+  </Info>
+
+  <Info>
+    With inheritance, it's only the behaviour that's shared. With composition, we can share not only behaviour, but also UI elements and partially applied components.
+  </Info>
+</div>

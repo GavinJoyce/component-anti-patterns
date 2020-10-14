@@ -1,0 +1,16 @@
+<div
+  {{did-insert this.onDidInsertModifier}}
+  {{will-destroy this.onWillDestroyModifier}}
+  class="p-2 m-2 bg-green-200"
+>
+  [Parent]
+  <ComponentLifecycle::Child />
+  [Parent]
+</div>
+
+<div class="p-2 m-2 bg-pink-200">
+  See: https://github.com/emberjs/ember.js/issues/18873#issuecomment-613574747
+</div>
+<div class="p-2 m-2 bg-pink-200">
+  See: tests
+</div>
