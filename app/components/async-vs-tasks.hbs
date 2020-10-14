@@ -1,0 +1,20 @@
+<Ui::Button {{on "click" this.asyncCounter}}>
+  Start Async Counter
+</Ui::Button>
+
+<Ui::Button {{on "click" (perform this.taskCounter)}}>
+  Start Task Counter
+</Ui::Button>
+
+<div class="p-2 m-2 text-3xl text-pink-500">
+  The count is: {{this.count}}
+</div>
+
+<Note>
+  The `asyncCounter` action continues to execute after this component is tore down. Open the console, click both buttons and hide the component. The task is cancelled, the async action isn't.
+</Note>
+
+<Info>
+  We should always prefer `@task` in components as they auto-cancel when the component is tore down.
+</Info>
+
